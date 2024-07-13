@@ -3,7 +3,7 @@
 namespace App;
 
 class Basket {
-    public array $items = [];
+    private array $items = [];
 
     public function addItemToBasket(BasketItem $itemToAdd): void {
         if ($itemToAdd->getPrice() < 0) {

@@ -9,5 +9,10 @@
     <include>
       <directory suffix=".php">src</directory>
     </include>
+    <exclude>
+      <!-- TODO: Remove Product.php when implemented -->
+      <file>src/Product.php</file>
+      <file>src/NoResultsException.php</file>
+    </exclude>
   </source>
 </phpunit>

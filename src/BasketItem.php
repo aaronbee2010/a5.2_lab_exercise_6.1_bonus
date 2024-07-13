@@ -2,11 +2,21 @@
 
 namespace App;
 
-class BasketItem extends Product {
+class BasketItem {
+    private int $id;
+    private float $price;
     private int $quantity = 0;
 
-    public function __construct(mixed $idOrSku, \PDO $pdo = new \PDO()) {
-        parent::__construct($idOrSku, $pdo);
+    public function __construct(int $id, Product $product) {
+        [ $this->id, $this->price ] = $product->getProductPriceById($id);
+    }
+
+    public function getId(): int {
+        return $this->id;
+    }
+
+    public function getPrice(): float {
+        return $this->price;
     }
 
     public function getQuantity(): int {
